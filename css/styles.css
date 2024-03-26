@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com");
+@import url("https://fonts.gstatic.com");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+@import url("buttons.css");
+@import url("base.css");
+
+html {
+  scroll-behavior: smooth;
+}
+main {
+  min-height: calc(100vh - 138px);
+}
+#show-case {
+  position: relative;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 26, 26, 0.2),
+      rgb(255, 102, 102, 0.2)
+    ),
+    url("../img/bg.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 40vh;
+  width: 100%;
+}
+
+#show-case .content {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #fff;
+  padding: 20px;
+  background-color: rgba(153, 153, 153, 0.3);
+  border-radius: 10px;
+}
+
+@media (min-width: 576px) {
+  #show-case {
+    height: 50vh;
+  }
+  #show-case .content {
+    font-size: 23px;
+  }
+}
+
+/* telefon görünümünden tablet görünümüne geçince yüksekliği arttır komutu */
+@media (min-width: 768px) {
+  #show-case {
+    height: 60vh;
+  }
+  #show-case .content {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 992px) {
+  #show-case {
+    height: 70vh;
+  }
+  #show-case .content {
+    font-size: 26px;
+  }
+}
+
+.main-header {
+  background-color: #fc997c;
+  padding: 6px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.main-nav {
+  display: inline-block;
+  width: calc(100% - 110px);
+  text-align: right;
+}
+.main-nav__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.main-nav__item {
+  display: inline-block;
+  margin: 0px 8px;
+  font-size: large;
+}
+.main-header__logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 21px;
+}
+/* sadece mobil görüntüde gösterilmesi için normal görünümde none yapıp görünmez yaptık mobil görünümde ise diğer elemanlar gözükmeyecek sadece icon gösterilecek*/
+.main-nav__item:last-child {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .main-nav__item {
+    display: none;
+  }
+
+  .main-nav__item:last-child {
+    display: block;
+  }
+
+  .responsive .main-nav__item {
+    display: block;
+    text-align: left;
+    margin: 1rem 0;
+  }
+
+  .responsive .main-nav__item:last-child {
+    position: absolute;
+    right: 20px;
+    top: 6px;
+  }
+
+  .responsive .main-nav {
+    display: block;
+  }
+}
+
+/* combinators selector özelliği item içindeki a lar */
+.main-nav__item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.main-nav__item a:hover,
+.main-nav__item:hover::before {
+  color: #2e4c6d;
+}
+
+.main-nav__item:active::before,
+.main-nav__item a:active {
+  color: #fff;
+}
+
+/* login linkinden ok işaretini kaldırma */
+.main-nav__item--login::before {
+  content: none;
+}
+
+/* üzerine tıklayıp basılı tutunca rengin bg color renginin eskiye dönmesi */
+.main-nav__item--login a:active {
+  background-color: #2e4c6d;
+  color: #fff;
+}
+
+/* text align vererek tüm how it works içindeklierli ortaladık */
+#how-it-works {
+  padding: 10px;
+  text-align: center;
+}
+
+.icon-box h3 {
+  color: #3e4555;
+  font-size: 26px;
+}
+
+/* icon rengi vermek için icin icon-box classı üzerinde ki i etiketlerine */
+
+.icon-box i {
+  color: #fc997c;
+}
+
+#features {
+  margin-bottom: 40px;
+}
+/* size-cover ile resmi kapladığı alana göre kırpıp ayarlar  */
+.features__img {
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(255, 26, 26, 0.2),
+      rgb(255, 102, 102, 0.2)
+    ),
+    url("../img/features.jpeg");
+  background-size: cover;
+  background-position: top center;
+}
+.features__content {
+  background-color: #edf5f7;
+  padding: 40px;
+  vertical-align: top;
+}
+.features__content,
+.features__img {
+  height: 350px;
+}
+
+.features__content h3 {
+  font-size: 30px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #3e4555;
+  font-size: 30px;
+}
+
+.plan {
+  text-align: center;
+  padding: 5px;
+}
+.plan__badge {
+  background-color: #fff;
+  color: #fc997c;
+  padding: 8px;
+  border-radius: 5px;
+}
+.inner-plan {
+  background-color: #edf5f7;
+  padding: 25px 10px;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.inner-plan:hover {
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+  transition: box-shadow 0.5s;
+}
+/* !important dediğimiz zaman geçerli olan özelliğin baskın özellik olmasını sağlıyoruz çünkü inner planda da bir bg rengi verilmişti*/
+.recommended_plan {
+  color: #fff;
+  background-color: #396eb0;
+}
+/* planların içinde ki ul lere özellik verme */
+.plan_features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* 768 px ve üstündeyken ortaki kartı yukarı oynatmak için kullanılır */
+@media (min-width: 768px) {
+  .plan--featured {
+    position: relative;
+    top: -20px;
+  }
+}
+
+.plan_features li {
+  margin: 6px 0px;
+}
+#backtotop {
+  font-size: 30px;
+  position: fixed;
+  bottom: 67px;
+  right: 10px;
+}
+#backtotop i {
+  color: #4b7eb4;
+  font-size: 45px;
+  transition: 0.6s;
+}
+#backtotop i:hover {
+  color: #2e4c6d;
+}
+
+.counter {
+  background: linear-gradient(to bottom, #fc997c 0%, #fc8b69 100%);
+  text-align: center;
+  padding: 50px;
+}
+.counter__item {
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+}
+.counter h4 {
+  margin: 0;
+  color: #fff;
+}
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+/* üzerine geldiğimizde hareket ettirmek için direkt trnfrm translatey ile yapabiliriz */
+.card:hover {
+  transform: translateY(-10px);
+  transition: all 0.3s;
+  box-shadow: rgba(26, 0, 0, 0.3) 0px 7px 29px 0px;
+}
+.card-body {
+  padding: 10px;
+}
+
+/* cardlar arası boşluk bırakmak için */
+.card-container {
+  padding: 10px;
+}
+/* karttaki resimleri responsive olarak yükeskliğini ayarlamak için card-image e max height max alabileceği px değerini veriyoruz */
+.card-image {
+  max-height: 350px;
+}
+footer {
+  background-color: #2e4c6d;
+  padding: 30px;
+  margin-top: 30px;
+}
+footer a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+footer ul li {
+  list-style-type: none;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+#social-links {
+  text-align: right;
+}
+
+.fab {
+  padding: 10px;
+  font-size: 25px;
+  border-radius: 50%;
+}
+.fab:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background-color: #3b5998;
+  color: #fff;
+}
+.fa-twitter {
+  background-color: #55acee;
+  color: #fff;
+}
+
+.fa-instagram {
+  background-color: #125688;
+  color: #fff;
+}

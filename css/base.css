@@ -1,0 +1,95 @@
+/* düz mobil ölçüleri */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.row {
+  margin-top: 40px;
+}
+
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.col-3 {
+  float: left;
+  width: 33.3%;
+}
+
+.col-2 {
+  float: left;
+  width: 50%;
+}
+/*  başlangıcı col ile başlıyan tüm classlar için 
+768px in altına düştüğünde ekran genişliği planları col ları alt alta alır
+%100 vererek tüm satırı kaplatıp yaparız */
+@media (max-width: 768px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+.container {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* her resme responsive olarak en olarak tüm üst etiketinin genişliğini kaplayacak bir genişlik vermek için bu classı her resme uygularız */
+.img-fluid {
+  width: 100%;
+}
+
+/* boostrap kütüphanesinden alınan breakpoint ölçüleri */
+/* // X-Small devices (portrait phones, less than 576px) */
+/* 576 px altını üst tarafata yazdıktın yani düz mobil görünümünü */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .container {
+    margin: 0 auto;
+    width: 540px;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    margin: 0 auto;
+    width: 720px;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    margin: 0 auto;
+    width: 960px;
+  }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    margin: 0 auto;
+    width: 1140px;
+  }
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    margin: 0 auto;
+    width: 1320px;
+  }
+}
